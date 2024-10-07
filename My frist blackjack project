@@ -1,0 +1,94 @@
+# Andressa
+import random
+from art import logo
+
+game_run = input("Do you want to play a game of Blackjack? Type 'y' or 'n': " ).lower()
+if game_run == "y":
+    print(logo)
+
+cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+
+def deal_card():
+    user = random.sample(cards, 2)
+    computer = random.sample(cards, 2)
+    blackjack = 11 + 10
+
+    def calculate_score(hand):
+        score = sum(hand)
+
+        if score > 21 and 11 in hand:
+            hand.remove(11)
+            hand.append(1)
+
+        if score > 21:
+            score = sum(hand)
+
+        if score == blackjack:
+            return 0
+
+        return score
+    calculate_score(hand=cards)
+
+    user_score = calculate_score(user)
+    computer_score = calculate_score(computer)
+
+    print(f"Your cards: {user} and current score is: {user_score}")
+    print(f"Computer first card: {computer[0]}")
+
+    another_hand = input("Type 'y' to get another card, type 'n' to pass: ").lower()
+    if another_hand == "y":
+       user.append(random.choice(cards))
+       user_score = calculate_score(user)
+    print(f"Your cards: {user} and current score is: {user_score}")
+    print(f"Computer first card: {computer[0]}")
+
+    if user_score < 21:
+        input("Type 'y' to get another card, type 'n' to pass: ").lower()
+        if another_hand == "y":
+         user.append(random.choice(cards))
+        user_score = calculate_score(user)
+            # print(f"Your final hand is: {user} and score is: {user_score}\n")
+    while computer_score < 17:
+        computer.append(random.choice(cards))
+        computer_score = calculate_score(computer)
+
+
+    if another_hand == "n":
+           if user_score <= 21 and (user_score > computer_score or computer_score > 21):
+               print(f"Your final hand is: {user} and score is: {user_score}\n"
+                     f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                     f"You win! 🥳")
+           else:
+               print(f"Your final hand is: {user} and score is: {user_score}\n"
+                     f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                     f"You lose 😭")
+
+
+    # def compare():
+    if computer_score == user_score:
+        print(f"Your final hand is: {user} and score is: {user_score}\n"
+                f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                f"It's a draw! 😑")
+    elif blackjack in computer:
+        print(f"Your final hand is: {user} and score is: {user_score}\n"
+                f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                f"You loose 😭")
+    elif blackjack in user:
+        print(f"Your final hand is: {user} and score is: {user_score}\n"
+                f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                f"You win! 🥳")
+    elif user_score > 21:
+        print(f"Your final hand is: {user} and score is: {user_score}\n"
+                f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                f"You loose 😭")
+    elif computer_score > 21:
+        print(f"Your final hand is: {user} and score is: {user_score}\n"
+                f"Computer final hand is: {computer} and score is: {computer_score}\n"
+                f"You win! 🥳")
+
+
+
+
+deal_card()
+
+
