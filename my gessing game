@@ -1,0 +1,48 @@
+import random
+from art1 import logo
+
+numbers = range(1, 100)
+number = random.choice(numbers)
+
+print("Welcome to the Number Guessing Game!\n"
+      "I'm thinking of a number between 1 and 100.")
+print(logo)
+
+def guessing_game():
+    end_game = False
+
+    game_level = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+    if game_level == "hard":
+        play_tries = 5
+        if play_tries > 5:
+            end_game = True
+            print("You've run out of guesses, you lose.")
+    else:
+        play_tries = 10
+        if play_tries > 10:
+            end_game = True
+            print("You've run out of guesses, you lose.")
+
+
+    while not end_game:
+        print(f"You have {play_tries} attempts remaining to guess the number. ")
+        another_guess = int(input("Make a guess: "))
+
+        if another_guess > number:
+            play_tries -= 1
+            print("Too high.\n"
+                  "Guess again.")
+        elif another_guess < number:
+            play_tries -= 1
+            print("Too low.\n"
+                  "Guess again.")
+        elif another_guess == number:
+            end_game = True
+            print(f"Right Guess. the answer is: {number}\n"
+                  "You win! 🥳")
+
+        if play_tries == 0:
+            end_game = True
+            print(f"You've run out of guesses, the answer is: {number}. You lose 😭")
+
+guessing_game()
