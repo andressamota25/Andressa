@@ -1,0 +1,68 @@
+import random
+from game_data import data
+from art import logo, vs
+
+# 1. print logo and define score and first account_2 out of the loop:
+print(logo)
+user_score = 0
+game_should_continue = True
+account_2 = random.choice(data)
+
+# 2. create the game loop:
+while game_should_continue:
+
+# 3. Create account variables inside the loop:
+    account_1 = account_2
+    account_2 = random.choice(data)
+
+    if account_1 == account_2:
+        account_2 = random.choice(data)
+
+# 4. Put accounts into printable formation:
+    print(f"Compare A: {account_1['name']}, {account_1['description']}, {account_1['country']}.")
+    print(f"Against B: {account_2['name']}, {account_2['description']}, {account_2['country']}.")
+    print(vs)
+
+# 5. taking user impute:
+    user_guess = input("Who has more followers? Type 'A' or 'B':  ").lower()
+
+# 6. clear the screen:
+    print("\n" * 20)
+    print(logo)
+
+# 7. Create a function o compare the accounts:
+    def comp_accounts():
+        """comparing user guesses and checking if right or wrong"""
+        follower_account_1 = account_1['follower_count']
+        follower_account_2 = account_2['follower_count']
+
+        if user_guess == "a":
+            if follower_account_1 > follower_account_2:
+                return "You're right!"
+            else:
+                return "You're wrong!"
+        elif user_guess == "b":
+            if follower_account_2 > follower_account_1:
+                return "You're right!"
+            else:
+                return "You're wrong!"
+
+# 8. Create score function
+    def score(current_score, result):
+        """score function to add to the score guess"""
+        if result == "You're right!":
+            current_score += 1
+        return current_score
+
+# 9. if guess is right adding to the score:
+    result = comp_accounts()
+    user_score = score(user_score, result)
+
+# 10. if guess is wrong user loose and game ends:
+    if result == "You're wrong!":
+        game_should_continue = False
+
+# 11. print result of the game:
+    print(f"{result} Your score is: {user_score}")
+
+
