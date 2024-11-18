@@ -1,0 +1,43 @@
+import turtle as t
+import random
+
+# creating the dots and list of colors based on an image
+tim = t.Turtle()
+t.colormode(255)
+color_list = [(210, 163, 107), (235, 220, 227), (20, 28, 57), (142, 60, 93), (227, 208, 127), (208, 129, 144), (213, 77, 103), (83, 116, 97), (59, 92, 140), (127, 152, 141), (68, 21, 41), (127, 33, 55), (40, 52, 105), (143, 72, 55), (226, 181, 164), (230, 162, 178), (138, 155, 177), (92, 126, 173), (113, 135, 122), (178, 110, 94), (183, 188, 205), (185, 199, 180), (37, 85, 62), (208, 122, 41), (34, 71, 53), (44, 70, 78), (111, 47, 35)]
+
+# hide pen arrow and set speed 
+tim.speed("fastest")
+tim.hideturtle()
+
+# define the dot and movement set with function
+def draw(space, x):
+    tim.setheading(-226)
+    tim.forward(300)
+    tim.setheading(0)
+    for i in range(x):
+        for j in range(x):
+
+            tim.dot(20, random.choice(color_list))
+
+
+            tim.forward(space)
+        tim.backward(space*x)
+
+        tim.right(90)
+        tim.forward(space)
+        tim.left(90)
+
+# pen up for spacing the dots 
+tim.penup()
+
+# drawing the dots 
+tim.home()
+draw(50, 10)
+
+
+tim.hideturtle()
+
+
+screen = t.Screen()
+screen.exitonclick()
