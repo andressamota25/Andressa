@@ -1,0 +1,122 @@
+/* full page settings for color  */
+body {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    text-align: left;
+}
+
+/* registration box settings */
+.Registration {
+    background-color: #D3D3D3;
+    border: 3px;
+    border-radius: 10px;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 80%;
+    max-width: 350px;
+    font-family: "Barlow";
+    color: #EE964B;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.Registration label {
+    color: #1F271B;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "Barlow";
+    margin-top: 0.8rem;
+}
+
+.Registration input,
+.Registration select {
+    width: 99%;
+    font-size: 1rem;
+}
+
+.Registration button {
+    background-color: #28AFB0;
+    border: none;
+    border-radius: 4px;
+    color: #D3D3D3;
+    cursor: pointer;
+    width: 102%;
+    margin-top: 0.8rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.Registration button:hover {
+    background-color: #19647E;
+}
+
+
+.content {
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 400px;
+    text-align: left;
+}
+
+/* header style settings */
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #F77F00;
+    font-family: "Barlow";
+    font-weight: 100;
+    text-align: center;
+    height: 200px;
+}
+
+/* General styles for text on the workout page */
+.workout-page h1 {
+    color: #1F271B;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Barlow";
+}
+
+/* Workout table settings */
+.workout-table {
+    width: 80%;
+    border-radius: 11px;
+    margin: 1rem auto;
+    background-color: #D3D3D3;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: "Barlow";
+}
+
+/* Table HEADER styles */
+.workout-table th {
+    background-color: #F4D35E;
+    color: #1F271B;
+    padding: 10px;
+    border: 3px solid #F4D35E;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Table data cell styles */
+.workout-table td {
+    background-color: #28AFB0;
+    border: 2px solid #28AFB0;
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/* List item styling within the table data cells */
+.workout-table td li {
+    font-weight: normal;
+    margin-bottom: 0.8rem;
+}

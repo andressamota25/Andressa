@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+SES
+    {% extends "index.html" %}
+
+    {% block body %}
+    <!-- style from css page redirected with class -->
+    <body class="workout-page">
+        <!-- gredding -->
+        <h1>Here is your new workout plan, {{ name }}</h1>
+        <table class="workout-table">
+            <tr>
+                <!-- Number of days -->
+                <th>Day One</th>
+                <th>Day Two</th>
+                <th>Day Three</th>
+            </tr>
+            <tr>
+                <!-- days description -->
+                <td>Chest Shoulders & Triceps</td>
+                <td>Back and Biceps</td>
+                <td>Legs & Core</td>
+            </tr>
+            <tr>
+                <!-- day one part1 -->
+                <td><li>Bench Press – 3 Sets (6-8 reps)</li>
+                    <li>Incline Dumbbell Bench Press – 3 Sets (8-12 reps)</li>
+                    <li>Cable Crossovers – 3 Sets (8-12 reps)</li>
+                </td>
+                <!-- day two part1 -->
+                <td><li>Seated Cable Row – 3 Sets (8-12 reps)</li>
+                    <li>Lat Pulldown – 3 Sets (8-12 reps)</li>
+                    <li>Bent-Over Fly Dumbbell – 3 Sets (8-12 reps)</li>
+                </td>
+                <!-- day three part1 -->
+                <td><li>Squat Barbell – 3 Sets (8-12 reps)</li>
+                    <li>Leg Press – 3 Sets (8-12 reps)</li>
+                    <li>Leg Extension – 3 Sets (8-12 reps)</li>
+                    <li>Leg Curl – 3 Sets (8-12 reps)</li>
+                </td>
+            </tr>
+            <tr>
+                <!-- day one part2 -->
+                <td><li>Standing Overhead Press – 3 Sets (8-12 reps)</li>
+                    <li>Lateral Raises – 3 Sets (8-12 reps)</li>
+                    <li>Skullcrushers – 3 Sets (8-12 reps)</li>
+                    <li>Triceps Rope Pushdown – 3 Sets (8-12 reps)</li>
+                </td>
+                <!-- day two part2 -->
+                <td><li>Back Hyperextension – 3 Sets (8-12 reps)</li>
+                    <li>Bicep Barbell Curls – 3 Sets (8-12 reps)</li>
+                    <li>Hammer Curls – 3 Sets (8-12 reps)</li>
+                </td>
+                <!-- day three part2 -->
+                <td><li>Standing Calf Raises – 3 Sets (8-12 reps)</li>
+                    <li>Plank – 3 Sets (30-60 seconds)</li>
+                    <li>Crunch – 3 Sets (15-20 reps)</li>
+                </td>
+            </tr>
+    </table>
+    </body>
+    {% endblock %}
+
+</html>

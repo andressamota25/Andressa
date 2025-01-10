@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Fit Best Friend</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Link from Google to access font catalog -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    {% block body %}
+    <!-- Header with background image -->
+    <div class="header" style="background-image: url('{{ url_for('static', filename='header-bg.png') }}');">
+    </div>
+    <div class="Registration">
+        <h2>Registration</h2>
+        <form action="/" method="POST">
+            <label for="name">Name:</label>
+            <input autocomplete="off" type="text" name="name" id="name" required>
+
+            <label for="Age">Age:</label>
+            <input autocomplete="off" type="number" name="age" id="age" required>
+
+            <label for="days">How many days would you like to workout (Choose between 3, 4 or 5 days a week):</label>
+            <input autocomplete="off" type="number" name="days" id="days" required>
+
+            <label for="gender">To each gender do you most identify?</label>
+            <input autocomplete="off" type="text" name="gender" id="gender">
+
+            <label for="height">Height (in cm):</label>
+            <input autocomplete="off" type="number" step="0.01" name="height" id="height" required>
+
+            <label for="weight">Weight:</label>
+            <input autocomplete="off" type="number" step="0.01" name="weight" id="weight" required>
+
+            <button type="submit">Click here to see your new workout plan!</button>
+        </form>
+    {% endblock %}
+    </div>
+</body>
+</html>
+
